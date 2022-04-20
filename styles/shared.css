@@ -183,7 +183,7 @@ table {
 :root {
     --fontPrimaryColor: #000000;
     --fontSecondaryColor: #687277;
-    --fontThirdColor: hsla(200, 7%, 44%, 0.7);
+    --fontThirdColor: #687277d0;
 }
 
 html {
@@ -195,7 +195,7 @@ html {
 }
 
 body {
-    background-color: #FFFFFF;
+    background-color: white;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -216,12 +216,14 @@ a:hover {
     flex-direction: column;
     align-items: center;
     max-width: 813px;
-    min-width: 375px;
-    margin-top: 2rem;
+    min-width: 340px;
+    margin: 2rem 1rem 1rem 1rem;
+
 }
 
 .bannerImage {
     width: 100%;
+    height: auto;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 11px;
 }
@@ -229,11 +231,21 @@ a:hover {
 nav {
     width: 91.39%;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--fontSecondaryColor);
     margin-top: 2rem;
+}
+
+nav a {
+    position: relative;
+    left: -28px;
+    color: var(--fontSecondaryColor);
+    text-decoration: none;
+    vertical-align: 15%;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .checkbox {
@@ -256,30 +268,30 @@ nav {
 }
 
 .menuBurger {
+    width: auto;
+    height: auto;
     position: relative;
-    left: -22px;
+    left: -28px;
     z-index: -1;
     transition-property: all;
     transition-timing-function: ease-in-out;
     transition-duration: 0.25s;
 }
 
-nav a {
-    color: var(--fontSecondaryColor);
-    text-decoration: none;
+.navItemHidden1 {
+    transition: opacity ease-in-out 0.25s;
 }
 
-.navCurrentPage {
-    position: relative;
-    left: -22px;
-    vertical-align: 15%;
+.navItemHidden2 {
+    transition: opacity ease-in-out 0.35s;
 }
 
-.navMenu a {
-    vertical-align: 15%;
-    margin-left: 1rem;
-    visibility: hidden;
-    opacity: 0;
+.navItemHidden3 {
+    transition: opacity ease-in-out 0.45s;
+}
+
+.navItemHidden4 {
+    transition: opacity ease-in-out 0.55s;
 }
 
 .checkbox:checked~.navItemHidden1 {
@@ -301,31 +313,6 @@ nav a {
     visibility: initial;
     opacity: 1;
 }
-
-.navItemHidden1 {
-    position: relative;
-    left: -22px;
-    transition: opacity ease-in-out 0.25s;
-}
-
-.navItemHidden2 {
-    position: relative;
-    left: -22px;
-    transition: opacity ease-in-out 0.35s;
-}
-
-.navItemHidden3 {
-    position: relative;
-    left: -22px;
-    transition: opacity ease-in-out 0.45s;
-}
-
-.navItemHidden4 {
-    position: relative;
-    left: -22px;
-    transition: opacity ease-in-out 0.55s;
-}
-
 
 main {
     width: 91.39%;
@@ -430,7 +417,7 @@ footer {
 }
 
 .footerLegalWrapper {
-    width: 39.98%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 
@@ -445,7 +432,7 @@ footer {
 /*Responsive between 644px and 810px */
 @media(max-width:810px) {
     .pageFlexWrapper {
-        margin-top: clamp(0.1rem, 2.2vw, 2rem);
+        margin-top: clamp(1rem, 2.2vw, 2rem);
     }
 
     .header {
@@ -468,10 +455,7 @@ footer {
         justify-content: space-around;
     }
 
-    .postalAddress {
-        flex-basis: 60%;
 
-    }
 
     .phoneNumber {
         flex-basis: 40%;
@@ -479,41 +463,48 @@ footer {
     }
 
     .emailAddress {
-        flex-basis: 100%;
+        flex-basis: 60%;
         text-align: center;
     }
+
+    .postalAddress {
+        flex-basis: 100%;
+        text-align: center;
+
+    }
+
 }
 
 @media(max-width:500px) {
-    .navMenu a {
-        margin-left: 0.5rem;
-    }
-
     .contactsFlexWrapper {
         width: 95%;
     }
 
-    .footerLegalWrapper {
-        width: 55%;
-    }
 }
 
 @media(max-width:450px) {
-    nav {
-        font-size: 1rem;
+    .footerLegalWrapper {
+        width: 95%;
     }
 }
 
 @media(max-width:405px) {
-    nav {
-        width: 92%;
+    .contactHeader {
+        font-size: 1.7rem;
+
     }
 
-    .navMenu a {
-        margin-left: 0.28rem;
+    .contactIcons {
+        width: 14px;
+        height: 14px;
     }
 
     .addressLink {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
+
+    .footerLegal {
+        font-size: 1rem;
+    }
+
 }
