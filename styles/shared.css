@@ -370,23 +370,18 @@ footer {
     margin-top: 6rem;
 }
 
-.contactsBackground {
-    width: 100%;
-    height: 10rem;
-    display: flex;
-    justify-content: center;
+.contactsFlexWrapper {
+    width: 91.39%;
+    height: fit-content;
+    padding: 1rem 2rem 2rem 2rem;
     background-color: #9BAAB1;
     border-radius: 1.1rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.contactsFlexWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    width: 91.39%;
-    margin-top: 1.5rem;
+    justify-content: center;
+
 }
 
 .contactHeader {
@@ -429,7 +424,7 @@ footer {
     color: var(--fontSecondaryColor);
 }
 
-/*Responsive between 644px and 810px */
+
 @media(max-width:810px) {
     .pageFlexWrapper {
         margin-top: clamp(1rem, 2.2vw, 2rem);
@@ -445,6 +440,10 @@ footer {
 }
 
 @media(max-width:644px) {
+    footer {
+        margin-top: 2rem;
+    }
+
     .contactsFlexWrapper {
         width: 80%;
         gap: 0;
@@ -452,35 +451,17 @@ footer {
     }
 
     .contactDetailsWrapper {
-        justify-content: space-around;
-    }
-
-
-
-    .phoneNumber {
-        flex-basis: 40%;
-
-    }
-
-    .emailAddress {
-        flex-basis: 60%;
-        text-align: center;
-    }
-
-    .postalAddress {
-        flex-basis: 100%;
-        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.5rem;
 
     }
 
 }
 
-@media(max-width:500px) {
-    .contactsFlexWrapper {
-        width: 95%;
-    }
-
-}
 
 @media(max-width:450px) {
     .footerLegalWrapper {
@@ -489,19 +470,6 @@ footer {
 }
 
 @media(max-width:405px) {
-    .contactHeader {
-        font-size: 1.7rem;
-
-    }
-
-    .contactIcons {
-        width: 14px;
-        height: 14px;
-    }
-
-    .addressLink {
-        font-size: 1rem;
-    }
 
     .footerLegal {
         font-size: 1rem;
