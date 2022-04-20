@@ -505,6 +505,10 @@ footer {
 }
 
 @media(max-width:405px) {
+    nav {
+        width: 92%;
+    }
+
     .navMenu a {
         margin-left: 0.28rem;
     }
