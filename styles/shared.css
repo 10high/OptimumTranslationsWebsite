@@ -221,11 +221,26 @@ a:hover {
 
 }
 
+.bannerImageBG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: clamp(4rem, 9vw, 10rem);
+    background-color: #9BAAB1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 11px;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.bannerImageContainer {
+    flex-basis: 55%;
+}
+
 .bannerImage {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 11px;
 }
 
 nav {
@@ -442,6 +457,10 @@ footer {
 }
 
 @media(max-width:644px) {
+    .bannerImageContainer {
+        flex-basis: 70%;
+    }
+
     footer {
         margin-top: 2rem;
     }
@@ -461,17 +480,23 @@ footer {
         margin-top: 0.5rem;
 
     }
-
 }
 
-
 @media(max-width:450px) {
+    .bannerImageContainer {
+        flex-basis: 75%;
+    }
+
     .footerLegalWrapper {
         width: 95%;
     }
 }
 
 @media(max-width:405px) {
+    .bannerImageBG {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
 
     .footerLegal {
         font-size: 1rem;
